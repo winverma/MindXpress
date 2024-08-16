@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindXpress Quiz App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo"><a href="/" style="color: white; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); font-size: 2em; font-weight: bold; text-decoration: none;">MindXpress</a></div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#quiz">Take the Quiz</a></li>
+            <li><a href="#results">Results</a></li>
+        </ul>
+    </nav>
+
+    <!-- Top Hero Section -->
+    <section id="home" class="hero">
+        <h1>Welcome to MindXpress Quiz Web App</h1>
+        <p>Challenge your mind with our interactive quiz!</p>
+        <a href="#quiz" class="btn">Start Quiz</a>
+    </section>
+
+    <!-- Quiz Section -->
+    <section id="quiz" class="quiz-container">
+        <div class="question-box">
+            <h2 class="question">Question will appear here</h2>
+            <div class="options">
+                <button class="option">Option 1</button>
+                <button class="option">Option 2</button>
+                <button class="option">Option 3</button>
+                <button class="option">Option 4</button>
+            </div>
+            <button class="btn" id="nextBtn">Go to Next Question</button>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section id="results" class="results-container">
+        <h2>Your Results</h2>
+        <p id="score">You scored: 0/10</p>
+        <a href="/" class="btn">Try Again</a>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
