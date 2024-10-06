@@ -21,11 +21,11 @@
     <section id="home" class="hero">
         <h1>Welcome to MindXpress Quiz Web App</h1>
         <p>Challenge your mind with our interactive quiz!</p>
-        <a href="#quiz" class="btn">Start Quiz</a>
+        <button class="btn" id="startBtn">Start Quiz</button> <!-- Start Quiz Button -->
     </section>
 
     <!-- Quiz Section -->
-    <section id="quiz" class="quiz-container">
+    <section id="quiz" class="quiz-container" style="display: none;">
         <div class="question-box">
             <h2 class="question">Question will appear here</h2>
             <div class="options">
@@ -34,17 +34,17 @@
                 <button class="option">Option 3</button>
                 <button class="option">Option 4</button>
             </div>
-            <button class="btn" id="nextBtn">Go to Next Question</button>
+            <button class="btn" id="nextBtn" disabled>Go to Next Question</button>
         </div>
     </section>
 
     <!-- Results Section -->
-    <section id="results" class="results-container">
+    <section id="results" class="results-container" style="display: none;">
         <h2>Your Results</h2>
         <p id="score">You scored: 0/10</p>
         <a href="/" class="btn">Try Again</a>
     </section>
 
-    <script src="script.js"></script>
+    <script src="script.js"></script> <!-- Script at the end of body -->
 </body>
 </html>

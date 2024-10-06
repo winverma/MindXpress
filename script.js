@@ -9,116 +9,77 @@ document.addEventListener('DOMContentLoaded', function () {
     let currentQuestionIndex = 0;
     let score = 0;
 
-    const questions = [
-        {
-            question: 'What is the capital of France?',
-            options: ['Paris', 'London', 'Berlin', 'Madrid'],
-            answer: 'Paris'
-        },
-        {
-            question: 'Which planet is known as the Red Planet?',
-            options: ['Earth', 'Mars', 'Jupiter', 'Saturn'],
-            answer: 'Mars'
-        },
-        {
-            question: "Who wrote 'To Kill a Mockingbird'?",
-            options: ["Harper Lee", "Mark Twain", "J.K. Rowling", "Jane Austen"],
-            answer: "Harper Lee"
-        },
-        {
-            question: "What is the smallest prime number?",
-            options: ["1", "2", "3", "5"],
-            answer: "2"
-        },
-        {
-            question: "Which planet is known as the Red Planet?",
-            options: ["Mars", "Venus", "Jupiter", "Saturn"],
-            answer: "Mars"
-        },
-        {
-            question: "What is the powerhouse of the cell?",
-            options: ["Nucleus", "Mitochondria", "Ribosome", "Endoplasmic Reticulum"],
-            answer: "Mitochondria"
-        },
-        {
-            question: "Who painted the Mona Lisa?",
-            options: ["Leonardo da Vinci", "Vincent van Gogh", "Pablo Picasso", "Claude Monet"],
-            answer: "Leonardo da Vinci"
-        },
-        {
-            question: "In which year did World War II end?",
-            options: ["1941", "1945", "1939", "1948"],
-            answer: "1945"
-        },
-        {
-            question: "What is the chemical symbol for water?",
-            options: ["O2", "H2O", "CO2", "NaCl"],
-            answer: "H2O"
-        },
-        {
-            question: "Which element has the atomic number 1?",
-            options: ["Helium", "Oxygen", "Hydrogen", "Carbon"],
-            answer: "Hydrogen"
-        },
-        {
-            question: "Which country is known as the Land of the Rising Sun?",
-            options: ["China", "South Korea", "Japan", "Thailand"],
-            answer: "Japan"
-        }
-    ];
+    let questions = []; // Initialize an empty array for questions
+
+    // Fetch questions from the database
+    function fetchQuestions() {
+        fetch('get_questions.php')
+            .then(response => response.json())
+            .then(data => {
+                questions = data; // Assign fetched data to questions
+                startQuiz(); // Start the quiz after fetching questions
+            })
+            .catch(error => console.error('Error fetching questions:', error));
+    }
 
     function showQuestion(question) {
-        questionElement.innerText = question.question;
+        questionElement.innerText = question.q_text; // Use q_text for the question
         optionButtons.forEach((button, index) => {
-            button.innerText = question.options[index];
-            button.disabled = false;
-            button.classList.remove('correct', 'wrong');
-            button.addEventListener('click', () => selectAnswer(button, question.answer));
+            button.innerText = question[`option_${String.fromCharCode(97 + index)}`]; // Set option text
+            button.disabled = false; // Enable buttons
+            button.classList.remove('correct', 'wrong'); // Remove previous states
         });
     }
 
-    function selectAnswer(button, correctAnswer) {
-        optionButtons.forEach(btn => btn.disabled = true);
-        if (button.innerText === correctAnswer) {
+    function selectAnswer(selectedButton, correctAnswer) {
+        optionButtons.forEach(button => button.disabled = true); // Disable all buttons after selection
+        if (selectedButton.innerText === correctAnswer) {
             score++;
-            button.classList.add('correct');
+            selectedButton.classList.add('correct'); // Highlight correct answer
         } else {
-            button.classList.add('wrong');
-            optionButtons.forEach(btn => {
-                if (btn.innerText === correctAnswer) {
-                    btn.classList.add('correct');
+            selectedButton.classList.add('wrong'); // Highlight wrong answer
+            optionButtons.forEach(button => {
+                if (button.innerText === correctAnswer) {
+                    button.classList.add('correct'); // Highlight the correct answer
                 }
             });
         }
-        nextButton.disabled = false;
+        nextButton.disabled = false; // Enable the next button
     }
 
     function startQuiz() {
         currentQuestionIndex = 0;
         score = 0;
-        quizContainer.style.display = 'block';
-        resultsContainer.style.display = 'none';
-        showQuestion(questions[currentQuestionIndex]);
-        nextButton.disabled = true;
+        quizContainer.style.display = 'block'; // Show the quiz container
+        resultsContainer.style.display = 'none'; // Hide results initially
+        showQuestion(questions[currentQuestionIndex]); // Show the first question
+        nextButton.disabled = true; // Disable next button until answer is selected
     }
 
     function showResults() {
-        quizContainer.style.display = 'none';
-        resultsContainer.style.display = 'block';
-        scoreElement.innerText = `You scored: ${score}/${questions.length}`;
+        quizContainer.style.display = 'none'; // Hide quiz container
+        resultsContainer.style.display = 'block'; // Show results container
+        scoreElement.innerText = `You scored: ${score}/${questions.length}`; // Display the score
     }
+
+    optionButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            selectAnswer(button, questions[currentQuestionIndex].option_correct);
+        });
+    });
 
     nextButton.addEventListener('click', () => {
         currentQuestionIndex++;
         if (currentQuestionIndex < questions.length) {
-            showQuestion(questions[currentQuestionIndex]);
-            nextButton.disabled = true;
+            showQuestion(questions[currentQuestionIndex]); // Show next question
+            nextButton.disabled = true; // Disable next button until answer is selected
         } else {
-            showResults();
+            showResults(); // Show results if no more questions
         }
     });
 
-    startButton.addEventListener('click', startQuiz);
+    startButton.addEventListener('click', fetchQuestions); // Start quiz by fetching questions
 
-    startQuiz(); // Start the quiz initially
+    // Start the quiz by fetching questions when the document is ready
+    fetchQuestions();
 });
