@@ -23,6 +23,7 @@ MindXpress is an interactive and customizable quiz-based learning platform desig
 
 
 
+
 🛠 Tech Stack
 
 Frontend: React.js, Next.js, Tailwind CSS and Scalable Vector Graphics.
