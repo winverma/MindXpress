@@ -5,7 +5,7 @@ MindXpress - An Interactive Quiz WebApp
 
 MindXpress is an interactive and customizable quiz-based learning platform designed to enhance cognitive abilities, knowledge retention, and engagement. Inspired by modern UI aesthetics, it features a sleek background, dynamic question modules, and wildcard-based gameplay.
 
-🚀 Features
+🚀 Features:
 
 🖌 Customizable Animated Backgrounds – Replace default SVG patterns with custom GIFs or Lottie animations.
 
