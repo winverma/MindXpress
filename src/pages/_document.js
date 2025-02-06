@@ -18,7 +18,7 @@ export default function Document () {
 				<meta property="og:type" content="website" />
 				<meta property="og:image" content="" />
 				<meta property="og:url" content="" />
-				<meta property="og:description" content="MindXpress is a quiz/trivia game with questions made by IA. You can select different game modes and topics, you can also use different wildcards to help you answer the questions." />
+				<meta property="og:description" content="MindXpress is a quiz/trivia game. You can select different game modes and topics, you can also use different wildcards to help you answer the questions." />
 			</Head>
 			<body>
 				<Main />
