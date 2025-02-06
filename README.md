@@ -44,7 +44,6 @@ yarn install  # or npm install
 # Start the development server
 yarn dev  # or npm run dev
 
-🌐 Deployment
 
 # Build the project
 yarn build  # or npm run build
