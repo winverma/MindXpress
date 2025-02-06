@@ -37,6 +37,7 @@ DevOps: Docker, Kubernetes (Planned) - Currently Hosting on Netlify.
 
 # Clone the repository
 git clone https://github.com/winverma/mindxpress
+
 cd mindxpress
 
 # Install dependencies
