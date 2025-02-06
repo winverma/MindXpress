@@ -64,3 +64,6 @@ Win Verma GitHub: @winverma
 ⭐ Show Your Support
 
 Give a ⭐ if you like this project and feel free to contribute!
+
+<p align="center">Thank you for scrolling all the way!</p>
+<p align="center"><a href="#top"><img src="https://img.shields.io/badge/-Back%20to%20Top-purple?style=for-the-badge" /></a></p>
