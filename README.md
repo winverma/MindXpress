@@ -25,7 +25,7 @@ MindXpress is an interactive and customizable quiz-based learning platform desig
 
 Frontend: React.js, Next.js, Tailwind CSS and Scalable Vector Graphics.
 
-Backend: Node.js
+Backend: Node.js.
 
 Animation & Icons: Lottie / GIF-based Backgrounds, React Icons, Iconify, Tabler Icons, Canvas Confetti, Vector Halftones. 
 
