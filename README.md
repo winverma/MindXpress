@@ -19,9 +19,6 @@ MindXpress is an interactive and customizable quiz-based learning platform desig
 
 🌍 Global Leaderboard & AI Question Genration (Coming Soon) – Cohere for Question Generation and then Compete with players worldwide.
 
-📸 Screenshots
-
-
 
 
 🛠 Tech Stack
