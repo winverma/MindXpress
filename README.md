@@ -1,5 +1,5 @@
 # MindXpress
-MindXpress - An Interactive Quiz WebApp
+## MindXpress - An Interactive Quiz WebApp
 
 🎨 About MindXpress
 
