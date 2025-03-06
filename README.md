@@ -7,7 +7,7 @@ MindXpress is an interactive and customizable quiz-based learning platform desig
 
 🚀 Features:
 
-🖌 Customizable Animated Backgrounds – Replace default SVG patterns with custom GIFs or Lottie animations.
+🖌 Customizable Animated Backgrounds – Replace default SVG patterns with custom GIFs or Lottie Animations.
 
 🎲 Wildcard-Based Gameplay – Use power-ups like skips, hints, and extra lives.
 
@@ -17,19 +17,19 @@ MindXpress is an interactive and customizable quiz-based learning platform desig
 
 ⚡ Optimized Performance – Lightweight assets & efficient state management.
 
-🌍 Global Leaderboard & AI Question Generation (Coming Soon) – Cohere for Question Generation and then Compete with players worldwide.
+🌍 Global Leaderboard & AI Question Generation (Coming Soon) – Cohere for question generation and compete with players worldwide.
 
 
 
 🛠 Tech Stack
 
-Frontend: React.js, Next.js, Tailwind CSS and Scalable Vector Graphics.
+Frontend: React.js, Next.js, Tailwind CSS, and Scalable Vector Graphics.
 
 Backend: Node.js.
 
 Animation & Icons: Lottie / GIF-based Backgrounds, React Icons, Iconify, Tabler Icons, Canvas Confetti, Vector Halftones. 
 
-DevOps: Docker, Kubernetes (Planned) - Currently Hosting on Netlify.
+DevOps: Docker, Kubernetes (Planned) — Currently Hosted on Netlify.
 
 🏗 Installation & Setup
 
